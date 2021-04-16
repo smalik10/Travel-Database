@@ -9,7 +9,7 @@ class travel:
     dest: a file path to the trave list'''
      self.dest = open("travel_destinations.csv", r, encoding = "utf-8")
     
-    def travel(df_list):
+    def travel(df_list):    #Casslyn's Function
         '''This will display a dataframe of
         travel destinations.
 
@@ -18,6 +18,19 @@ class travel:
         df_list: a varible that merges columns together
         
         Returns: a dataframe '''
+        
+    def filter_distance( dataframe, miles):    #Malik's Function
+'''
+        Takes the travel dataframe and specified miles and returns a dataframe where specified values are true and the distance to the country is less than the miles specified.
+ 
+        Args:
+            dataframe(dataframe): resulting dataframe of travel
+            miles(float): distance specified by the user
+ 
+        Returns:
+            results(dataframe): dataframe where all the desired values are true
+        '''
+
     def seasons_t(t1,t1):
         ''''This shows the user when is the
         best time to travel to a country in 
