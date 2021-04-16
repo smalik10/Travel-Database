@@ -31,6 +31,16 @@ class travel:
             results(dataframe): dataframe where all the desired values are true
         '''
 
+    def most_popular(dataframe):                 #Malik's Function
+        '''
+        Find the max number of travelled for any location and return a list of the countries with number of people travelled.
+
+        Args:
+            dataframe (dataframe): resulting dataframe of travel
+
+        Returns:
+            popular(list): a list of countries with the max number of people travelled in the dataframe
+
     def seasons_t(t1,t1):
         ''''This shows the user when is the
         best time to travel to a country in 
@@ -48,7 +58,7 @@ class travel:
         #ti.intersection_update(t2)
         #return
         #Casslyn Merritt
-    def user_input():
+    def user_input():                          #Casslyn's Fuction
         user_input = input(“Type “where to stay” or “family friendly” to see a list of countries : )
         list_x = ("where to stay", "family friendly")
         for x in list:
