@@ -72,7 +72,18 @@ class travel:
         #ti.intersection_update(t2)
         #return
         #Casslyn Merritt
-    def user_input():                          #Casslyn's Fuction
+    def user_input(user_input,list_x): #Casslyn's Fuction
+    '''This asks for user input to get a list of
+        hotels or a rank of family friendly countries
+        
+        Args:
+            user_input: a string asking for user input
+             list_x: a list containing keywords for user input
+                
+        SideEffects: Alters rank of list
+            
+        
+        Retruns: a list '''
         user_input = input(“Type “where to stay” or “family friendly” to see a list of countries : )
         list_x = ("where to stay", "family friendly")
         for x in list:
