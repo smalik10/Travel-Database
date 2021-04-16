@@ -21,7 +21,9 @@ class travel:
         
     def filter_distance( dataframe, miles):    #Malik's Function
 '''
-        Takes the travel dataframe and specified miles and returns a dataframe where specified values are true and the distance to the country is less than the miles specified.
+        Takes the travel dataframe and specified miles and 
+        returns a dataframe where specified values are true 
+        and the distance to the country is less than the miles specified.
  
         Args:
             dataframe(dataframe): resulting dataframe of travel
@@ -33,13 +35,15 @@ class travel:
 
     def most_popular(dataframe):                 #Malik's Function
         '''
-        Find the max number of travelled for any location and return a list of the countries with number of people travelled.
+        Find the max number of travelled for any location 
+        and return a list of the countries with number of people travelled.
 
         Args:
             dataframe (dataframe): resulting dataframe of travel
 
         Returns:
-            popular(list): a list of countries with the max number of people travelled in the dataframe
+            popular(list): a list of countries with 
+            the max number of people travelled in the dataframe
 
     def seasons_t(t1,t1):
         ''''This shows the user when is the
