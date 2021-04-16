@@ -2,12 +2,22 @@ import pandas as pd
 class travel:
     '''This displays a list of 
     travel destinations.'''
-    def __init__(self, dest):
-         '''This will retrieve data from 
-         a csv file
+    
+    
+    def travel(pd_list):    #Casslyn's Function
+        '''Returns a sorted coloumn of ranked countries 1-5
+    
     Args:
-    dest: a file path to the trave list'''
-     self.dest = open("travel_destinations.csv", r, encoding = "utf-8")
+    df_list: a string containing a filepath to movies dataframe
+    
+    SideEffects: alters list of dataframe
+   
+    Returns: a rank list of countries '''
+    
+    pd_list = pd.read_csv(travel_destinations.csv)
+    
+   
+    return pd_list.sort_values(ascending=False)'
     
     def travel(df_list):    #Casslyn's Function
         '''This will display a dataframe of
