@@ -90,10 +90,11 @@ class travel:
                 print(“Incorrect”)
                 
                 
-   
+   def main():
+   '''Main will test and run code. Will display dataframe
+        and user input'''
   if __name__ == "__main__":
-    #args = parse_args(sys.argv[1:])
-    #main(args.event_file, start_date=args.startdate, end_date=args.enddate)
+       main()
                      
 
 
