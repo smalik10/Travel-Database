@@ -118,6 +118,20 @@ class Travel:
             if user_input == '2':
                 print(n_2)
                 break
+    def parse_args(arglist):
+    """ Parse command-line arguments.
+    
+    Args:
+        arglist (list of str): a list of command-line arguments.
+    
+    Returns:
+        namespace: the parsed command-line arguments as a namespace with
+        variables movie_csv and rating_csv.
+    """
+        parser = ArgumentParser()
+        parser.add_argument("pd_list", help="CSV containing travel destinations")
+        #parser.add_argument("rating_csv", help="CSV containing ratings")
+        return parser.parse_args(arglist)
 
                 
    def main():
