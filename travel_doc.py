@@ -1,4 +1,6 @@
+from argparse import ArgumentParser
 import pandas as pd
+import sys
 class Travel:
     '''This displays a list of 
     travel destinations.'''
@@ -12,25 +14,27 @@ class Travel:
 
         
         Args: 
-        df_list: a varible that merges columns together
+        df_list: a string containing a filepath to travel dataframe
+        travel_list: a variable that reads travel dataframe
         
-        Returns: a dataframe '''
-        return pd_list.sort_values(ascending=False)
+        Returns: a sorted coloumn of ranked countries 1-5 '''
+        travel_list = pd.read_csv(df_list)
+        return travel_list.sort_values(ascending=False)
                  
     def travel(pd_list,best_rank):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5
     
     Args:
-    df_list: a string containing a filepath to movies dataframe
+    df_list: a string containing a filepath to travel dataframe
     
     SideEffects: alters list of dataframe
    
     Returns: a rank list of countries '''
     
-    travel_list = pd.read_csv(pd_list)
-    best_rank = travel_list.groupby("Country")["Rank"].max
+   
+    best_rank = travel_list.groupby("Country")["Rank"]["Dont' miss].max #double check if this excutes
     return best_rank
-    # return pd_list.sort_values(ascending=False)
+    
 
         
     def filter_distance( dataframe, miles):    #Malik's Function
@@ -82,28 +86,39 @@ class Travel:
         
         Args:
             user_input: a string asking for user input
-             list_x: a list containing keywords for user input
+            list_x: a list containing keywords for user input
                 
         SideEffects: Alters rank of list
             
         
-        Retruns: a list '''
-        user_input = input(“Type “where to stay” or “family friendly” to see a list of countries : )
-        list_x = ("where to stay", "family friendly")
-        for x in list:
-            stay_dict = [Nay Pald Hideaway:1,]#finish dict 
-            country_family_rank = {1:”Dubai United Arb Emirates”,
-                                   3: “Scotland”,2: “Maldives”,
-                                   4: “Pakistan”,5: “Philippines”} 
-        if user_input == "where to stay":
-            return stay_dict
-        else:
-            print(“you did not type in the correct words”)
-            if user  if user_input == “family friendly”:
-                return sort(country_family_rank)
-            else:
-                print(“Incorrect”)
-                
+        Retruns: a list of family friendly coutnries from least to greatest '''
+        user_input = input('Type 1 for “where to stay” or 2 “family friendly” to see a list of countries:')
+        stay_dict = {"Nay Pald Hideaway":1,"Greenland Fairy Meadow Resort":2,
+        "Velaa Private Island Resort":3,"wild camping in Mull":4,
+        "Hotel Melia":5}
+        
+        key_stay = "Key box for countries: 1 = Philippines,2 = Pakistan,3 = Maldives,4 = Scotland,5 = Dubai"
+        country_family_rank = {"Dubai":1,
+        "Scotland":4,"Maldives":2,
+        "Pakistan":3,"Philippines":5}
+        n_2 = sorted(country_family_rank)
+        
+        while True:
+        
+            user_input = input('Type 1 for “where to stay” or 2 for “family friendly” to see a list of countries:' )
+        
+            if user_input != '1' or user_input != '2':
+                print(input("You did not type in the correct words. Please try again:"))
+                continue
+        
+            if user_input == '1':
+                print(key_stay,stay_dict)
+                break
+        
+            if user_input == '2':
+                print(n_2)
+                break
+
                 
    def main():
    '''Main will test and run code. Will display dataframe
