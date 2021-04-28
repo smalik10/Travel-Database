@@ -21,15 +21,15 @@ class Travel:
         travel_list = pd.read_csv(df_list)
         return travel_list.sort_values(ascending=False)
                  
-    def travel(pd_list,best_rank):    #Casslyn's Function
+    def travel(best_rank):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5
     
     Args:
-    df_list: a string containing a filepath to travel dataframe
+    best_rank: a variable that merges dataframe columns together 
     
     SideEffects: alters list of dataframe
    
-    Returns: a rank list of countries '''
+    Returns: a list of ranked countries '''
     
    
     best_rank = travel_list.groupby("Rank")["Country"]["Dont' miss"].max #double check if this excutes
