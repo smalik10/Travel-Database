@@ -32,7 +32,7 @@ class Travel:
     Returns: a rank list of countries '''
     
    
-    best_rank = travel_list.groupby("Country")["Rank"]["Dont' miss].max #double check if this excutes
+    best_rank = travel_list.groupby("Rank")["Country"]["Dont' miss"].max #double check if this excutes
     return best_rank
     
 
@@ -63,7 +63,7 @@ class Travel:
             popular(list): a list of countries with 
             the max number of people travelled in the dataframe
 
-    def seasons_t(t1,t1):
+    def seasons_t(t1,t1): #Delete?????????????????????
         ''''This shows the user when is the
         best time to travel to a country in 
         comparison to another
