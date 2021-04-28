@@ -1,10 +1,23 @@
 import pandas as pd
-class travel:
+class Travel:
     '''This displays a list of 
     travel destinations.'''
     
+    def __init__(self, filepath):
+        self.filepath = filepath
     
-    def travel(pd_list):    #Casslyn's Function
+    def travel_dataframe(df_list):    #Casslyn's Function
+        '''This will display a dataframe of
+        travel destinations.
+
+        
+        Args: 
+        df_list: a varible that merges columns together
+        
+        Returns: a dataframe '''
+        return pd_list.sort_values(ascending=False)
+                 
+    def travel(pd_list,best_rank):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5
     
     Args:
@@ -14,20 +27,11 @@ class travel:
    
     Returns: a rank list of countries '''
     
-    pd_list = pd.read_csv(travel_destinations.csv)
-    
-   
-    return pd_list.sort_values(ascending=False)'
-    
-    def travel(df_list):    #Casslyn's Function
-        '''This will display a dataframe of
-        travel destinations.
+    travel_list = pd.read_csv(pd_list)
+    best_rank = travel_list.groupby("Country")["Rank"].max
+    return best_rank
+    # return pd_list.sort_values(ascending=False)
 
-        
-        Args: 
-        df_list: a varible that merges columns together
-        
-        Returns: a dataframe '''
         
     def filter_distance( dataframe, miles):    #Malik's Function
 '''
