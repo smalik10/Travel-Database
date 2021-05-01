@@ -6,11 +6,12 @@ class Travel:
     travel destinations.'''
     
     def __init__(self, filepath):
+        '''Initializes Travel object'''
         self.filepath = filepath
     
     def travel_dataframe(df_list):    #Casslyn's Function
         '''This will display a dataframe of
-        travel destinations.
+        travel destinations ranked from 1-5.
 
         
         Args: 
