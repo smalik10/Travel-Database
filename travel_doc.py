@@ -51,6 +51,9 @@ class Travel:
         Returns:
             results(dataframe): dataframe where all the desired values are true
         '''
+        for countries in dataframe:
+            results = dataframe[dataframe["Distance"] <= miles].groupby("Country")["Rank"].min()
+            return results
 
     def most_popular(dataframe):                 #Malik's Function
         '''
