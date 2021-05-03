@@ -3,7 +3,8 @@ import pandas as pd
 import sys
 class Travel:
     '''This displays a list of 
-    travel destinations.'''
+    travel destinations.
+    '''
     
     def __init__(self, filepath):
         '''Initializes Travel object'''
@@ -18,7 +19,8 @@ class Travel:
         df_list: a string containing a filepath to travel dataframe
         travel_list: a variable that reads travel dataframe
         
-        Returns: a sorted coloumn of ranked countries 1-5 '''
+        Returns: a sorted coloumn of ranked countries 1-5
+        '''
         travel_list = pd.read_csv(df_list)
         return travel_list.sort_values(ascending=False)
                  
@@ -26,12 +28,12 @@ class Travel:
         '''Returns a sorted coloumn of ranked countries 1-5 with
         a description.
     
-    Args:
-    best_rank: a variable that merges three dataframe columns together 
+        Args:
+        best_rank: a variable that merges three dataframe columns together 
     
-    SideEffects: alters list of dataframe
+        SideEffects: alters list of dataframe
    
-    Returns: a list of ranked countries with their description '''
+        Returns: a list of ranked countries with their description '''
     
    
     best_rank = travel_list.[["Rank","Country","Dont miss"]] 
@@ -40,7 +42,7 @@ class Travel:
 
         
     def filter_distance( dataframe, miles):    #Malik's Function
-'''
+        '''
         Takes the travel dataframe and specified miles and 
         returns a dataframe where specified values are true 
         and the distance to the country is less than the miles specified.
@@ -68,25 +70,9 @@ class Travel:
             popular(list): a list of countries with 
             the max number of people travelled in the dataframe
 
-    def seasons_t(t1,t1): #Delete?????????????????????
-        ''''This shows the user when is the
-        best time to travel to a country in 
-        comparison to another
-        
-        Args:
-        t1: a tuple/set of countries
-        t2: another tuple/set of countries/filter
-        
-        
-        Returns: countries that share things together
-        '''
-        #Syntax for intersection
-        #t1.intersection(t2)
-        #ti.intersection_update(t2)
-        #return
-        #Casslyn Merritt
+   
     def user_input(user_input,list_x): #Casslyn's Fuction
-    '''This asks for user input to get a list of
+        '''This asks for user input to get a list of
         hotels or a rank of family friendly countries
         
         Args:
@@ -96,7 +82,8 @@ class Travel:
         SideEffects: Alters rank of list
             
         
-        Retruns: a list of family friendly coutnries from least to greatest '''
+        Retruns: a list of family friendly coutnries from least to greatest 
+        '''
         user_input = input('Type 1 for “where to stay” or 2 “family friendly” to see a list of countries:')
         stay_dict = {"Nay Pald Hideaway":1,"Greenland Fairy Meadow Resort":2,
         "Velaa Private Island Resort":3,"wild camping in Mull":4,
@@ -131,7 +118,7 @@ class Travel:
     
     Returns:
         namespace: the parsed command-line arguments as a namespace with
-        variables movie_csv and rating_csv.
+        variables pd_list.
     """
         parser = ArgumentParser()
         parser.add_argument("pd_list", help="CSV containing travel destinations")
@@ -140,8 +127,9 @@ class Travel:
 
                 
    def main():
-   '''Main will test and run code. Will display dataframe
-        and user input'''
+    '''Main will test and run code. Will display dataframe
+        and user input
+    '''
   if __name__ == "__main__":
        main()
                      
