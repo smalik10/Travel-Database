@@ -24,11 +24,11 @@ class Travel:
         travel_list = pd.read_csv(df_list)
         return travel_list.sort_values(ascending=False)
                  
-    def travel(best_rank):    #Casslyn's Function
+    def travel(self):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5 with
         a description.
     
-        Args:
+        Att:?????????
         best_rank: a variable that merges three dataframe columns together 
     
         SideEffects: alters list of dataframe
@@ -36,7 +36,7 @@ class Travel:
         Returns: a list of ranked countries with their description '''
     
    
-    best_rank = travel_list.[["Rank","Country","Dont miss"]] 
+    best_rank = self.travel_list.[["Rank","Country","Dont miss"]] 
     return best_rank
     
 
