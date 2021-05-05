@@ -19,7 +19,7 @@ class Travel:
         
         return self.filepath.sort_values(ascending=False)
                  
-    def travel(best_rank):    #Casslyn's Function
+    def travel(self):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5 with
             a description.
     
@@ -115,8 +115,8 @@ def parse_args(arglist):
     arglist (list of str): a list of command-line arguments.
     
     Returns:
-    namespace: the parsed command-line arguments as a namespace with
-    variables movie_csv and rating_csv.
+    args: the parsed command-line arguments as a namespace
+    
     '''
     parser = ArgumentParser()
     parser.add_argument("filepath", help="CSV containing travel destinations")
@@ -125,8 +125,7 @@ def parse_args(arglist):
     return args
 
 def main(argmain):
-    '''Main will test and run code. Will display dataframe
-    and user input'''
+    '''Main will test and run all methods within Travel().'''
 
     args = parse_args(argmain)
     var = Travel(args.filepath)
@@ -138,6 +137,12 @@ def main(argmain):
     
     
 if __name__ == "__main__":
+    '''This will invoke
+    main() function.
+    
+    Returns: altered dataframes related to its method
+    
+    '''
     main( sys.argv[1:])
                      
 
