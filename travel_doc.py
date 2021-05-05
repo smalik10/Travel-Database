@@ -69,6 +69,10 @@ class Travel:
         Returns:
             popular(list): a list of countries with 
             the max number of people travelled in the dataframe
+         """
+         most_pop = dataframe.max()
+         most_travelled = dataframe[dataframe == max_pop].index.tolist()
+         return most_travelled
 
    
     def user_input(user_input,list_x): #Casslyn's Fuction
