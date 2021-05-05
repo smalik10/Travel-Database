@@ -3,47 +3,42 @@ import pandas as pd
 import sys
 class Travel:
     '''This displays a list of 
-    travel destinations.
-    '''
+    travel destinations.'''
     
     def __init__(self, filepath):
         '''Initializes Travel object'''
-        self.filepath = filepath
+        self.filepath = pd.read_csv('travel_dest.csv')
     
-    def travel_dataframe(df_list):    #Casslyn's Function
+    def travel_dataframe(self):    #Casslyn's Function
         '''This will display a dataframe of
         travel destinations ranked from 1-5.
 
         
-        Args: 
-        df_list: a string containing a filepath to travel dataframe
-        travel_list: a variable that reads travel dataframe
+        Returns: a sorted coloumn of ranked countries 1-5 '''
         
-        Returns: a sorted coloumn of ranked countries 1-5
-        '''
-        travel_list = pd.read_csv(df_list)
-        return travel_list.sort_values(ascending=False)
+        
+        return self.filepath.sort_values(ascending=False)
                  
-    def travel(self):    #Casslyn's Function
+    def travel(best_rank):    #Casslyn's Function
         '''Returns a sorted coloumn of ranked countries 1-5 with
-        a description.
+            a description.
     
-        Att:?????????
-        best_rank: a variable that merges three dataframe columns together 
+    Args:
+    best_rank: a variable that merges three dataframe columns together 
     
-        SideEffects: alters list of dataframe
+    SideEffects: alters list of dataframe
    
-        Returns: a list of ranked countries with their description '''
+    Returns: a list of ranked countries with their description '''
     
    
-    best_rank = self.travel_list.[["Rank","Country","Dont miss"]] 
-    return best_rank
+        best_rank = self.filepath[["Rank","Country","Dont miss"]] 
+        return best_rank
     
 
         
-    def filter_distance( dataframe, miles):    #Malik's Function
-        '''
-        Takes the travel dataframe and specified miles and 
+    def filter_distance(dataframe, miles):    #Malik's Function
+
+        '''Takes the travel dataframe and specified miles and 
         returns a dataframe where specified values are true 
         and the distance to the country is less than the miles specified.
  
@@ -58,7 +53,7 @@ class Travel:
             results = dataframe[dataframe["Distance"] <= miles].groupby("Country")["Rank"].min()
             return results
 
-    def most_popular(dataframe):                 #Malik's Function
+    def most_popular(dataframe):   #Malik's Function
         '''
         Find the max number of travelled for any location 
         and return a list of the countries with number of people travelled.
@@ -68,14 +63,13 @@ class Travel:
 
         Returns:
             popular(list): a list of countries with 
-            the max number of people travelled in the dataframe
-         """
-         most_pop = dataframe.max()
-         most_travelled = dataframe[dataframe == max_pop].index.tolist()
-         return most_travelled
+            the max number of people travelled in the dataframe'''
+              
+        most_pop = dataframe.max()
+        most_travelled = dataframe[dataframe == max_pop].index.tolist()
+        return most_travelled
 
-   
-    def user_input(user_input,list_x): #Casslyn's Fuction
+    def user_input(): #Casslyn's Fuction
         '''This asks for user input to get a list of
         hotels or a rank of family friendly countries
         
@@ -86,8 +80,8 @@ class Travel:
         SideEffects: Alters rank of list
             
         
-        Retruns: a list of family friendly coutnries from least to greatest 
-        '''
+        Retruns: a list of family friendly coutnries from least to greatest'''
+        
         user_input = input('Type 1 for “where to stay” or 2 “family friendly” to see a list of countries:')
         stay_dict = {"Nay Pald Hideaway":1,"Greenland Fairy Meadow Resort":2,
         "Velaa Private Island Resort":3,"wild camping in Mull":4,
@@ -114,28 +108,37 @@ class Travel:
             if user_input == '2':
                 print(n_2)
                 break
-    def parse_args(arglist):
-    """ Parse command-line arguments.
+def parse_args(arglist):
+    '''Parse command-line arguments.
     
     Args:
-        arglist (list of str): a list of command-line arguments.
+    arglist (list of str): a list of command-line arguments.
     
     Returns:
-        namespace: the parsed command-line arguments as a namespace with
-        variables pd_list.
-    """
-        parser = ArgumentParser()
-        parser.add_argument("pd_list", help="CSV containing travel destinations")
-        #parser.add_argument("rating_csv", help="CSV containing ratings")
-        return parser.parse_args(arglist)
-
-                
-   def main():
-    '''Main will test and run code. Will display dataframe
-        and user input
+    namespace: the parsed command-line arguments as a namespace with
+    variables movie_csv and rating_csv.
     '''
-  if __name__ == "__main__":
-       main()
+    parser = ArgumentParser()
+    parser.add_argument("filepath", help="CSV containing travel destinations")
+    args = parser.parse_args(arglist)
+    
+    return args
+
+def main(argmain):
+    '''Main will test and run code. Will display dataframe
+    and user input'''
+
+    args = parse_args(argmain)
+    var = Travel(args.filepath)
+    #test fucntions using var.(method/function)
+    var.user_input()#<---- test user_input method
+    var.user_input()
+    var.user_input()
+    var.user_input()
+    
+    
+if __name__ == "__main__":
+    main( sys.argv[1:])
                      
 
 
