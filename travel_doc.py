@@ -97,9 +97,7 @@ class Travel:
         
             user_input = input('Type 1 for “where to stay” or 2 for “family friendly” to see a list of countries:' )
         
-            if user_input != '1' or user_input != '2':
-                print(input("You did not type in the correct words. Please try again:"))
-                continue
+           
         
             if user_input == '1':
                 print(key_stay,stay_dict)
@@ -130,10 +128,11 @@ def main(argmain):
     args = parse_args(argmain)
     var = Travel(args.filepath)
     #test fucntions using var.(method/function)
-    var.user_input()#<---- test user_input method
-    var.user_input()
-    var.user_input()
-    var.user_input()
+    var.travel_dataframe()#<---- test user_input method
+    var.travel()
+    var.filter_distance(var.filepath, 34)
+    var.most_popular()
+    user_input()
     
     
 if __name__ == "__main__":
